@@ -7,7 +7,7 @@ import * as ReactDom from 'react-dom';
 // } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import * as React from 'react';
-import NavBar from './components/NavBar';
+import HelloWorld from './components/HelloWorld';
 // import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
 // import * as strings from 'HelloWorldWebPartStrings';
@@ -127,7 +127,7 @@ import NavBar from './components/NavBar';
 export default class HelloWorldWebPart extends BaseClientSideWebPart<any> {
    public render(): void {
         const element: React.ReactElement = React.createElement(
-          NavBar,
+          HelloWorld,
       {
         // contextData: this.context
       }
