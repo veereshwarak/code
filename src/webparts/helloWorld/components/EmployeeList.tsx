@@ -13,7 +13,9 @@ export interface EmployeeObject {
     lastName: string,
     imgUrl: string,
     designation: string,
-    country: string
+    country: string,
+    email: string,
+    phone: number
 }
 
 const EmployeeList : React.FC<EmployeeListProps> = ({employeeObj}) => {

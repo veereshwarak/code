@@ -1,6 +1,7 @@
 import { Dialog, DialogType, Stack, Separator, Label, IconButton } from '@fluentui/react';
 import * as React from 'react';
 import nature from '../assets/nature.png'
+import { mergeStyles } from '@fluentui/react/lib/Styling';
 
 interface EmployeeDetailDialogProps {
     isOpen: boolean;
@@ -13,7 +14,9 @@ interface EmployeeProps {
     lastName: string,
     imgUrl: string,
     designation: string,
-    country: string
+    country: string,
+    email: string,
+    phone: number
 }
 
 const EmployeeDetail: React.FC<EmployeeDetailDialogProps> = ({ isOpen, onDismiss, employee }) => {
@@ -23,6 +26,14 @@ const EmployeeDetail: React.FC<EmployeeDetailDialogProps> = ({ isOpen, onDismiss
     };
 
     const modalPropsStyles = { main: { maxWidth: 450 } };
+
+    const dialogStyles = {
+        main: {
+          maxWidth: '1000px', // Set the desired maximum width
+        },
+      };
+    
+      const customStyles = mergeStyles(dialogStyles);
 
     return (
         <Dialog
@@ -36,6 +47,7 @@ const EmployeeDetail: React.FC<EmployeeDetailDialogProps> = ({ isOpen, onDismiss
                 isBlocking: false, // Set to true for a blocking modal
                 styles: modalPropsStyles
             }}
+            styles={{ main: customStyles }}
         >
             <Stack horizontal horizontalAlign="end">
                 <IconButton
